@@ -126,23 +126,33 @@ export const roadmap = [
     imageUrl: roadmap4,
   },
 ];
-
 export const collabText =
   "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
+
+export const collabText1 =
+  "Seamless integration connects tools effortlessly, enhancing collaboration and workflow efficiency";
+
+export const collabText2 =
+  "Smart Automation helps to streamline your workflow and increase productivity.";
+
+export const collabText3 =
+  "Top-notch Security ensures your data is protected and your work is safe.";
 
 export const collabContent = [
   {
     id: "0",
     title: "Seamless Integration",
-    text: collabText,
+    text: collabText1,
   },
   {
     id: "1",
     title: "Smart Automation",
+    text: collabText2,
   },
   {
     id: "2",
     title: "Top-notch Security",
+    text: collabText3,
   },
 ];
 
