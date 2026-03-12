@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
+import { disablePageScroll, enablePageScroll } from "@fluejs/noscroll";
 
 import { navigation } from "@/constants";
 import { Button } from "@/components/ui/button";
