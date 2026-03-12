@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   const links = [
     { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
-    { title: "Chat", url: "/chat", icon: MessageSquare },
+    { title: "Chat", url: "/chat/new", icon: MessageSquare },
     { title: "Projects", url: "/projects", icon: Briefcase },
     { title: "Settings", url: "/settings", icon: Settings },
   ];

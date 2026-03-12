@@ -36,10 +36,11 @@ export default function LoginPage() {
               <Chrome size={18} />
               Google
             </Button>
-            <Button variant="outline" className="border-n-6 hover:bg-n-6 text-n-1 gap-2">
-              <Github size={18} />
-              Github
-            </Button>
+            <Link href="/dashboard" className="w-full">
+                <Button variant="outline" className="w-full border-n-6 hover:bg-n-6 text-n-1 gap-2">
+                    Guest Mode
+                </Button>
+            </Link>
           </div>
 
           <p className="text-n-4 text-xs mt-8">

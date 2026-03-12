@@ -24,7 +24,7 @@ const Hero = () => {
             Unleash the power of AI within Brainwave. Upgrade your productivity
             with Brainwave, the open AI chat app.
           </p>
-          <Link href="/dashboard">
+          <Link href="/login">
             <Button size="lg" className="bg-n-1 text-n-8 hover:bg-n-2">
               Get started
             </Button>
