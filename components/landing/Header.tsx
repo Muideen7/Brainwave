@@ -8,6 +8,8 @@ import { disablePageScroll, enablePageScroll } from "@fluejs/noscroll";
 
 import { navigation } from "@/constants";
 import { Button } from "@/components/ui/button";
+import MenuSvg from "../svg/MenuSvg";
+import { HamburgerMenu } from "../design/Header";
 
 interface NavItem {
   id: string;
@@ -68,6 +70,7 @@ const Header = () => {
               </Link>
             ))}
           </div>
+          <HamburgerMenu />
         </nav>
         <Link
           href="/signup"
@@ -80,15 +83,11 @@ const Header = () => {
         </Link>
 
         <Button
-          className="ml-auto lg:hidden"
+          className="ml-auto lg:hidden px-3"
           onClick={toggleNavigation}
           variant="ghost"
         >
-           <div className="w-6 h-6 flex flex-col justify-around">
-             <span className="w-full h-0.5 bg-n-1"></span>
-             <span className="w-full h-0.5 bg-n-1"></span>
-             <span className="w-full h-0.5 bg-n-1"></span>
-           </div>
+           <MenuSvg openNavigation={openNavigation} />
         </Button>
       </div>
     </div>
