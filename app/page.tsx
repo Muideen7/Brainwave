@@ -1,0 +1,12 @@
+import Header from "@/components/landing/Header";
+import Hero from "@/components/landing/Hero";
+
+export default function Home() {
+  return (
+    <main className="overflow-hidden">
+      <Header />
+      <Hero />
+      {/* Other sections would go here */}
+    </main>
+  );
+}

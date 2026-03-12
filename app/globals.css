@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-color-1: #AC6AFF;
+  --color-color-2: #FFC876;
+  --color-color-3: #FF776F;
+  --color-color-4: #7ADB78;
+  --color-color-5: #858DFF;
+  --color-color-6: #FF98E2;
+
+  --color-n-1: #FFFFFF;
+  --color-n-2: #CAC6DD;
+  --color-n-3: #ADA8C3;
+  --color-n-4: #757185;
+  --color-n-5: #3F3A52;
+  --color-n-6: #252134;
+  --color-n-7: #15131D;
+  --color-n-8: #0E0C15;
+  --color-n-9: #474060;
+  --color-n-10: #43435C;
+  --color-n-11: #1B1B2E;
+  --color-n-12: #2E2A41;
+  --color-n-13: #6C7275;
+
+  --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-code: var(--font-code), monospace;
+  --font-grotesk: var(--font-grotesk), sans-serif;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-muted: var(--muted);
+}
+
+:root {
+  --background: #0E0C15;
+  --foreground: #FFFFFF;
+  --card: #15131D;
+  --card-foreground: #FFFFFF;
+  --popover: #15131D;
+  --popover-foreground: #FFFFFF;
+  --primary: #AC6AFF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #252134;
+  --secondary-foreground: #FFFFFF;
+  --muted: #252134;
+  --muted-foreground: #757185;
+  --accent: #252134;
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #252134;
+  --input: #252134;
+  --ring: #AC6AFF;
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.h1 {
+  @apply font-semibold text-[2.5rem] leading-[3.25rem] md:text-[2.75rem] md:leading-[3.75rem] lg:text-[3.25rem] lg:leading-[4.0625rem] xl:text-[3.75rem] xl:leading-[4.5rem];
+}
+
+.h2 {
+  @apply text-[1.75rem] leading-[2.5rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3.5rem] xl:text-[3rem] xl:leading-tight;
+}
+
+.h3 {
+  @apply text-[2rem] leading-normal md:text-[2.5rem];
+}
+
+.body-1 {
+  @apply text-[0.875rem] leading-[1.5rem] md:text-[1rem] md:leading-[1.75rem] lg:text-[1.25rem] lg:leading-8;
+}
+
+.body-2 {
+  @apply font-light text-[0.875rem] leading-6 md:text-base;
+}
