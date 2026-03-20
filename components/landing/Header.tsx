@@ -9,13 +9,6 @@ import { disablePageScroll, enablePageScroll } from "@fluejs/noscroll";
 import { navigation } from "@/constants";
 import { Button } from "@/components/ui/button";
 
-interface NavItem {
-  id: string;
-  title: string;
-  url: string;
-  onlyMobile?: boolean;
-}
-
 const Header = () => {
   const pathname = usePathname();
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -47,13 +40,14 @@ const Header = () => {
         <Link className="block w-[12rem] xl:mr-8" href="/#hero">
           <Image src="/assets/brainwave.svg" alt="Brainwave" width={190} height={40} />
         </Link>
+
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
           } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
-            {navigation.map((item: NavItem) => (
+            {navigation.map((item) => (
               <Link
                 key={item.id}
                 href={item.url}
@@ -69,25 +63,27 @@ const Header = () => {
             ))}
           </div>
         </nav>
+
         <Link
           href="/signup"
           className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
         >
-          New Account
+          New account
         </Link>
-        <Link href="/login">
-          <Button className="hidden lg:flex">Sign in</Button>
+        <Link href="/login" className="hidden lg:block">
+          <Button>Sign in</Button>
         </Link>
 
         <Button
           className="ml-auto lg:hidden"
           onClick={toggleNavigation}
           variant="ghost"
+          size="icon"
         >
            <div className="w-6 h-6 flex flex-col justify-around">
-             <span className="w-full h-0.5 bg-n-1"></span>
-             <span className="w-full h-0.5 bg-n-1"></span>
-             <span className="w-full h-0.5 bg-n-1"></span>
+             <span className={`w-full h-0.5 bg-n-1 transition-transform ${openNavigation ? 'rotate-45 translate-y-2' : ''}`}></span>
+             <span className={`w-full h-0.5 bg-n-1 transition-opacity ${openNavigation ? 'opacity-0' : ''}`}></span>
+             <span className={`w-full h-0.5 bg-n-1 transition-transform ${openNavigation ? '-rotate-45 -translate-y-2' : ''}`}></span>
            </div>
         </Button>
       </div>

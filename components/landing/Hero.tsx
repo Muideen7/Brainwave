@@ -1,11 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { heroIcons } from "@/constants";
 
 const Hero = () => {
+  const parallaxRef = useRef(null);
+
   return (
-    <div className="pt-[12rem] -mt-[5.25rem] relative">
-      <div className="container relative z-1">
+    <div className="pt-[12rem] -mt-[5.25rem] relative" id="hero">
+      <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem]">
           <h1 className="h1 mb-6">
             Explore the Possibilities of AI Chatting with{" "}
@@ -13,7 +19,7 @@ const Hero = () => {
               Brainwave{" "}
               <Image
                 src="/assets/hero/curve.png"
-                className="absolute top-full left-0 w-full xl:mt-2"
+                className="absolute top-full left-0 w-full xl:-mt-2"
                 width={624}
                 height={28}
                 alt="Curve"
@@ -25,7 +31,7 @@ const Hero = () => {
             with Brainwave, the open AI chat app.
           </p>
           <Link href="/login">
-            <Button size="lg" className="bg-n-1 text-n-8 hover:bg-n-2">
+            <Button size="lg" className="bg-n-1 text-n-8 hover:bg-n-2 px-10">
               Get started
             </Button>
           </Link>
@@ -43,8 +49,28 @@ const Hero = () => {
                   height={490}
                   alt="AI"
                 />
+
+                <div className="absolute left-4 bottom-[1.1rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl lg:left-1/2 lg:bottom-[2rem] lg:-translate-x-1/2">
+                   <ul className="flex">
+                    {heroIcons.map((icon, index) => (
+                      <li className="p-5" key={index}>
+                        <Image src={icon} width={24} height={25} alt={icon} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
+          </div>
+
+          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
+            <Image
+              src="/assets/hero/hero-background.jpg"
+              className="w-full"
+              width={1440}
+              height={1800}
+              alt="hero"
+            />
           </div>
         </div>
       </div>
