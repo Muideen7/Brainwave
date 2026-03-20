@@ -7,7 +7,9 @@ import Image from "next/image";
 import { disablePageScroll, enablePageScroll } from "@fluejs/noscroll";
 
 import { navigation } from "@/constants";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
+import { HamburgerMenu } from "@/components/design/Header";
+import MenuSvg from "@/public/assets/svg/MenuSvg";
 
 const Header = () => {
   const pathname = usePathname();
@@ -62,6 +64,8 @@ const Header = () => {
               </Link>
             ))}
           </div>
+
+          <HamburgerMenu />
         </nav>
 
         <Link
@@ -70,21 +74,17 @@ const Header = () => {
         >
           New account
         </Link>
-        <Link href="/login" className="hidden lg:block">
-          <Button>Sign in</Button>
-        </Link>
+        <Button className="hidden lg:flex" href="/login">
+          Sign in
+        </Button>
 
         <Button
           className="ml-auto lg:hidden"
           onClick={toggleNavigation}
-          variant="ghost"
-          size="icon"
+          px="px-3"
+          white={false}
         >
-           <div className="w-6 h-6 flex flex-col justify-around">
-             <span className={`w-full h-0.5 bg-n-1 transition-transform ${openNavigation ? 'rotate-45 translate-y-2' : ''}`}></span>
-             <span className={`w-full h-0.5 bg-n-1 transition-opacity ${openNavigation ? 'opacity-0' : ''}`}></span>
-             <span className={`w-full h-0.5 bg-n-1 transition-transform ${openNavigation ? '-rotate-45 -translate-y-2' : ''}`}></span>
-           </div>
+          <MenuSvg openNavigation={openNavigation} />
         </Button>
       </div>
     </div>

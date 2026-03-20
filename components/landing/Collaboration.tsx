@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { collabApps, collabContent, collabText } from "@/constants";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
+import Section from "./Section";
 
 const Collaboration = () => {
   return (
-    <section id="how-to-use" className="py-10 lg:py-16 xl:py-20">
+    <Section crosses id="how-to-use">
       <div className="container lg:flex">
         <div className="max-w-[25rem]">
           <h2 className="h2 mb-4 md:mb-8">
@@ -94,7 +95,7 @@ const Collaboration = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

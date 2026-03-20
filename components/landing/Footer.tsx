@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { socials } from "@/constants";
+import Section from "./Section";
 
 const Footer = () => {
   return (
-    <footer className="!px-0 !py-10 border-t border-n-6">
+    <Section className="!px-0 !py-10" crosses>
       <div className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col">
         <p className="caption text-n-4 lg:block">
           © {new Date().getFullYear()}. All rights reserved.
@@ -22,7 +23,7 @@ const Footer = () => {
           ))}
         </ul>
       </div>
-    </footer>
+    </Section>
   );
 };
 

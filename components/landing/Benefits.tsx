@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { benefits } from "@/constants";
+import Section from "./Section";
+import Arrow from "@/public/assets/svg/Arrow";
+import ClipPath from "@/public/assets/svg/ClipPath";
 
 const Benefits = () => {
   return (
-    <section id="features">
-      <div className="container relative z-2 py-10 lg:py-16 xl:py-20">
+    <Section id="features">
+      <div className="container relative z-2">
         <h2 className="h2 mb-12 md:mb-16 lg:mb-20 text-center">
           Chat Smarter, Not Harder <br /> with Brainwave
         </h2>
@@ -31,14 +34,17 @@ const Benefits = () => {
                   <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
                     Explore more
                   </p>
+                  <Arrow />
                 </div>
               </div>
 
-              {item.light && <div className="absolute top-0 left-1/4 w-full aspect-square bg-radial-gradient from-[#28206C] to-[#28206C]/0 opacity-25" />}
+              {item.light && (
+                <div className="absolute top-0 left-1/4 w-full aspect-square bg-radial-gradient from-[#28206C] to-[#28206C]/0 opacity-25" />
+              )}
 
               <div
                 className="absolute inset-0.5 bg-n-8"
-                style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+                style={{ clipPath: "url(#benefits)" }}
               >
                 <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
                   {item.imageUrl && (
@@ -52,11 +58,13 @@ const Benefits = () => {
                   )}
                 </div>
               </div>
+
+              <ClipPath />
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

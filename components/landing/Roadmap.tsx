@@ -1,9 +1,13 @@
 import Image from "next/image";
 import { roadmap } from "@/constants";
+import Section from "./Section";
+import Tagline from "./Tagline";
+import Button from "../ui/button";
+import { Gradient } from "../design/Roadmap";
 
 const Roadmap = () => {
   return (
-    <section id="roadmap" className="py-10 lg:py-16 xl:py-20">
+    <Section className="overflow-hidden" id="roadmap">
       <div className="container md:pb-10">
         <div className="relative max-w-[50rem] mx-auto mb-12 lg:mb-20 md:text-center">
           <h2 className="h2">What we&apos;re working on</h2>
@@ -34,7 +38,7 @@ const Roadmap = () => {
                   </div>
                   <div className="relative z-1">
                     <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
-                      <div className="tagline">{item.date}</div>
+                      <Tagline>{item.date}</Tagline>
 
                       <div className="flex items-center px-4 py-1 bg-n-1 rounded text-n-8">
                         <Image
@@ -69,8 +73,13 @@ const Roadmap = () => {
             );
           })}
         </div>
+
+        <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
+          <Button href="/roadmap">Our roadmap</Button>
+        </div>
       </div>
-    </section>
+      <Gradient />
+    </Section>
   );
 };
 

@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { pricing } from "@/constants";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import Button from "@/components/ui/button";
+import Section from "./Section";
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="overflow-hidden py-10 lg:py-16 xl:py-20">
+    <Section className="overflow-hidden" id="pricing">
       <div className="container relative z-2">
         <div className="hidden relative justify-center mb-[6.5rem] lg:flex">
           <Image
@@ -53,11 +53,13 @@ const Pricing = () => {
                 )}
               </div>
 
-              <Link href="/login">
-                <Button className="w-full mb-6">
-                  {item.price ? "Get started" : "Contact us"}
-                </Button>
-              </Link>
+              <Button
+                className="w-full mb-6"
+                href={item.price ? "/login" : "mailto:contact@brainwave.io"}
+                white={!!item.price}
+              >
+                {item.price ? "Get started" : "Contact us"}
+              </Button>
 
               <ul>
                 {item.features.map((feature, index) => (
@@ -88,7 +90,7 @@ const Pricing = () => {
           />
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

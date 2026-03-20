@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { brainwaveServices, brainwaveServicesIcons } from "@/constants";
+import Section from "./Section";
+import Tagline from "./Tagline";
+import { Gradient, VideoBar, VideoChatMessage } from "../design/Services";
 
 const Services = () => {
   return (
-    <section id="how-to-use" className="py-10 lg:py-16 xl:py-20">
+    <Section id="how-to-use">
       <div className="container">
         <div className="relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]">
           <div className="absolute top-0 left-0 w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
@@ -96,11 +99,16 @@ const Services = () => {
                 height={400}
                 alt="Scary robot"
               />
+
+              <VideoChatMessage />
+              <VideoBar />
             </div>
           </div>
         </div>
+
+        <Gradient />
       </div>
-    </section>
+    </Section>
   );
 };
 
